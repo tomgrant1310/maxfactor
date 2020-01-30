@@ -24,7 +24,7 @@ async function start() {
 
   app.use(bodyParser.json())
 
-  
+
   const entryModel = require('../models/v1.1/entries')
   // Create competition entry
   app.put('/entries/', (request, response, next) => {
@@ -44,6 +44,7 @@ async function start() {
       }).catch((error) => next(error))
   })
 
+  
   
   // Give nuxt middleware to express
   app.use(nuxt.render)
