@@ -38,7 +38,6 @@ async function start() {
   })
 
   // Get competition entries
-
   app.post('/entries/', (request, response, next) => {
     entryModel.getEntries()
       .then((result) => {
