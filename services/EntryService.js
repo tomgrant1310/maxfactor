@@ -2,7 +2,6 @@ import Api from './Api'
 
 export default {
     getEntries() {
-        
         return Api().post('/entries/')
     },
     

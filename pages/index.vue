@@ -7,7 +7,7 @@
         <div class="col-12 col-md-6">
           <img src="https://pbs.twimg.com/media/D2nSLayW0AMSNgU.jpg" alt />
         </div>
-        <div class="col-12 col-md-6">
+        <div class="formsubmit p-3 col-12 col-md-6">
           <b-form @submit="onSubmit" @reset="onReset" v-if="show">
             <b-form-group
               id="input-group-1"
@@ -49,6 +49,14 @@ import EntryService from "@/services/EntryService";
 export default {
   data() {
     return {
+       meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'Max Factor Competition February 2020',
+          content: 'Win Max Factor Makeup -- Enter our competition to win a bumper pack of makeup from '
+        }
+      ],
       entries: [],
       form: {
         email: "",
@@ -57,6 +65,15 @@ export default {
       },
       show: true
     };
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: 'description', name: 'Max Factor Competition February 2020', content: 'Win Max Factor Makeup -- Enter our competition to win a bumper pack of makeup' }
+      ]
+    }
   },
   methods: {
     async onSubmit(evt) {
@@ -94,7 +111,10 @@ export default {
   align-items: center;
   text-align: center;
 }
-
+.formsubmit{
+  background-color: #e0bba8;
+  text-align: left;
+}
 .formrow img {
   width: 100%;
   height: auto;
@@ -105,7 +125,7 @@ export default {
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 75px;
+  font-size: 4rem;
   color: #35495e;
   letter-spacing: 1px;
 }
