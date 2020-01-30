@@ -16,8 +16,7 @@ if (process.env.NODE_ENV == 'production') {
                 idleTimeoutMillis: 10000
             }
         
-    }
-        
+    }     
 } else {
     module.exports = {
       
