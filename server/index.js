@@ -7,7 +7,6 @@ const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
 const bodyParser = require('body-parser')
 
-
 async function start() {
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
@@ -23,10 +22,8 @@ async function start() {
   }
 
   app.use(bodyParser.json())
+
   const entryModel = require('../models/v1.1/entries')
-
-
-
   // Create competition entry
   app.put('/entries/', (request, response, next) => {
     console.log(request.body)
