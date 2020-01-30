@@ -1,6 +1,6 @@
 # dw-maxfactor
 
-> Initial app build for Max Factor
+> Nuxt, Express, Axios, submission form
 
 ## Build Setup
 
