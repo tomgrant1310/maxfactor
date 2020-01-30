@@ -32,7 +32,7 @@ async function start() {
     // request.body.created = moment().format('YYYY-MM-DD HH:mm:ss')
     entryModel.createEntry(request.body)
       .then((result) => {
-        response.status(200).send('1 entry added with id:' + result)
+        response.status(200).send('1 entry added')
       }).catch((error) => next(error))
   })
 

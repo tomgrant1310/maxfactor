@@ -1,13 +1,17 @@
 <template>
   <div class="container">
     <div>
-      <logo />
-      <h3 class="title">Win Max Factor Makeup!</h3>
+      <div>
+        <logo/>
+        <h3 class="title">Win Max Factor Makeup!</h3>
+        <h5>Fancy winning this stunning collection of Max Factor Makeup?</h5>
+        Submit you email address below to enter
+      </div>
       <div class="row formrow">
         <div class="col-12 col-md-6">
-          <img src="https://pbs.twimg.com/media/D2nSLayW0AMSNgU.jpg" alt />
+          <img src="https://pbs.twimg.com/media/D2nSLayW0AMSNgU.jpg" alt="Win Max Factor Makeup" />
         </div>
-        <div class="formsubmit p-3 col-12 col-md-6">
+        <div class="formsubmit mt-3 mt-xl-0 p-3 col-12 col-md-6">
           <b-form @submit="onSubmit" @reset="onReset" v-if="show">
             <b-form-group
               id="input-group-1"
@@ -30,11 +34,11 @@
 
             <b-form-group id="input-group-4">
               <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
-                <b-form-checkbox value="me">Sign me up for MaxFactor news</b-form-checkbox>
+                <b-form-checkbox value="gdpr">Sign me up for MaxFactor news</b-form-checkbox>
               </b-form-checkbox-group>
             </b-form-group>
-            <b-button type="submit" variant="primary">Submit</b-button>
-            <b-button type="reset" variant="danger">Reset</b-button>
+            <b-button type="submit">Submit</b-button>
+            <b-button type="reset" >Reset</b-button>
           </b-form>
         </div>
       </div>
@@ -49,12 +53,13 @@ import EntryService from "@/services/EntryService";
 export default {
   data() {
     return {
-       meta: [
+      meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
-          hid: 'description',
-          name: 'Max Factor Competition February 2020',
-          content: 'Win Max Factor Makeup -- Enter our competition to win a bumper pack of makeup from '
+          hid: "description",
+          name: "Max Factor Competition February 2020",
+          content:
+            "Win Max Factor Makeup -- Enter our competition to win a bumper pack of makeup from "
         }
       ],
       entries: [],
@@ -68,10 +73,10 @@ export default {
   },
   head () {
     return {
-      title: this.title,
+      title: 'Max Factor Competition Spring 2020',
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'description', name: 'Max Factor Competition February 2020', content: 'Win Max Factor Makeup -- Enter our competition to win a bumper pack of makeup' }
+        { hid: 'description', name: 'Max Factor Competition February 2020', content: 'Win Max Factor Makeup -- Enter our competition to win a bumper pack of makeup from' }
       ]
     }
   },
@@ -80,14 +85,12 @@ export default {
       evt.preventDefault();
       const response = await EntryService.postEntry(this.form);
       this.entriesResult = response.data;
-      console.log(this.entriesResult)
     },
     onReset(evt) {
       evt.preventDefault();
       // Reset our form values
       this.form.email = "";
       this.form.name = "";
-      this.form.food = null;
       this.form.checked = [];
       // Trick to reset/clear native browser form validation state
       this.show = false;
@@ -111,7 +114,7 @@ export default {
   align-items: center;
   text-align: center;
 }
-.formsubmit{
+.formsubmit {
   background-color: #e0bba8;
   text-align: left;
 }
@@ -141,4 +144,5 @@ export default {
 .links {
   padding-top: 15px;
 }
+
 </style>

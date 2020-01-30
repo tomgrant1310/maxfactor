@@ -3,14 +3,15 @@ var createEntry = (body) => {
     return (db('entries').insert({
         // 'created': body.created,
         'name': body.name,
-        'email': body.email
+        'email': body.email,
+        'gdpr': body.gdpr
     })
     )
 }
 
 var getEntries = () => {
     const db = require('../../db')()
-    return db.select(['name', 'email'])
+    return db.select(['name', 'email', 'gdpr'])
         .from('entries')
 }
 

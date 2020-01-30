@@ -9,7 +9,8 @@ export default {
         
         const postData = {
             name: form.name,
-            email: form.email
+            email: form.email,
+            // gdpr: form.checked
         }
         return Api().put('/entries/', postData)
     }
