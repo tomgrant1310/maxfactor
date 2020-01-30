@@ -45,7 +45,6 @@ async function start() {
       }).catch((error) => next(error))
   })
 
-
   // Give nuxt middleware to express
   app.use(nuxt.render)
 
