@@ -5,6 +5,11 @@
 </div>
 </template>
 <style>
+.img {
+width: 100%;
+height: auto
+}
+
 .NuxtLogo {
   animation: 1s appear;
 }
