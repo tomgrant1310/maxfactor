@@ -7,13 +7,13 @@
     </b-row>
     <b-row>
       <b-col cols="12">
-        <h3 class="title">Win Max Factor Makeup!</h3>
+        <h1 class="title">Win Max Factor Makeup!</h1>
         <h5>Fancy winning this stunning collection of Max Factor makeup?</h5>Submit you email address below to enter
       </b-col>
     </b-row>
     <b-row>
       <b-col class="max-image col-12 col-md-6">
-        <img src="https://pbs.twimg.com/media/D2nSLayW0AMSNgU.jpg" alt="Win Max Factor Makeup" />
+        <img src="/max-factor.jpg" alt="Win Max Factor Makeup" />
       </b-col>
       <b-col class="formsubmit mt-2 mt-sm-0 p-4 mt-xl-0 col-12 col-md-6" cols="12">
         <b-form @submit="onSubmit" @reset="onReset" v-if="show">
@@ -47,7 +47,6 @@
       </b-col>
     </b-row>
   </b-container>
-
 </template>
 
 <script>
@@ -114,7 +113,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -128,24 +127,19 @@ export default {
   text-align: left;
 }
 img {
-  width: 100%;
+  width: 75%;
   height: auto;
-  
 }
-.max-image{
+.max-image {
+  img {
+    width: 100%;
+    height: auto;
+  }
   padding-right: 0px;
   padding-left: 0px
+  
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 4rem;
-  color: #35495e;
-  letter-spacing: 1px;
-}
 
 .subtitle {
   font-weight: 300;
