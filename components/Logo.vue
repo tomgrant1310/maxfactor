@@ -7,10 +7,6 @@
   </div>
 </template>
 <style>
-/* .header-img img {
-width: 100%;
-height: auto
-} */
 
 .NuxtLogo {
   animation: 1s appear;
