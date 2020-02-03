@@ -7,8 +7,7 @@ export default () => {
       baseURL: process.env.BASE_URL
     })
   } else {
-    return axios.create({
-      
+    return axios.create({ 
       baseURL: `http://localhost:3000`
     })
   }

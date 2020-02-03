@@ -22,10 +22,10 @@ if (process.env.NODE_ENV == 'production') {
       
             client: 'mysql',
             connection: {
-                host: 'localhost',
-                user: 'root',
-                password: 'zend1310',
-                database: 'dw_max',
+                host: '77.72.4.12',
+                user: 'monrodig_wp1',
+                password: 'XYbM9TlM16sb',
+                database: 'monrodig_DWDb',
                 timezone: 'UTC'
             },
             debug: true,
