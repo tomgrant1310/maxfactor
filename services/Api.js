@@ -4,7 +4,7 @@ export default () => {
   if (process.env.NODE_ENV == 'production') {
     return axios.create({
       // other option..here
-      baseURL: `http://localhost:3000`
+      baseURL: process.env.BASE_URL
     })
   } else {
     return axios.create({

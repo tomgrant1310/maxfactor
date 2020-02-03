@@ -42,6 +42,9 @@ module.exports = {
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios'
   ],
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
   axios: {
     // proxyHeaders: false
   },
